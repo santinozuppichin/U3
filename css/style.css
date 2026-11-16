@@ -1,0 +1,400 @@
+/* ===== Variables de color (desafío extra) ===== */
+:root {
+  --color-fondo: #f5f5f5;
+  --color-superficie: #ffffff;
+  --color-texto: #333333;
+  --color-titulo: #1f3a8a;
+  --color-primario: #3483fa;
+  --color-primario-oscuro: #2968c8;
+  --color-oferta: #00a650;
+  --color-borde: #dddddd;
+  --color-amarillo: #ffe600;
+}
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, Arial, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ===== Tipografía ===== */
+h1 {
+  color: var(--color-titulo);
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+h2 {
+  color: var(--color-titulo);
+  font-size: 1.5rem;
+  margin-top: 0;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0 0 6px;
+}
+
+p {
+  color: #555555;
+  font-size: 1rem;
+  margin: 0 0 12px;
+}
+
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===== Encabezado ===== */
+header {
+  background-color: var(--color-amarillo);
+  padding: 15px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px 25px;
+}
+
+header img {
+  display: block;
+  border-radius: 6px;
+}
+
+header search {
+  flex: 1;
+  min-width: 220px;
+}
+
+header form {
+  display: flex;
+}
+
+header label {
+  position: absolute;
+  left: -9999px; /* oculta la etiqueta visualmente pero la deja accesible */
+}
+
+header input[type="search"] {
+  flex: 1;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+header form button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background-color: var(--color-superficie);
+  cursor: pointer;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+header nav a {
+  color: var(--color-texto);
+  font-size: 0.9rem;
+}
+
+/* ===== Contenido principal ===== */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Migas de pan */
+main > nav {
+  margin-bottom: 20px;
+  font-size: 0.85rem;
+}
+
+main > nav ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+main > nav li + li::before {
+  content: "›";
+  margin-right: 8px;
+  color: #999999;
+}
+
+/* Secciones como tarjetas con espacio entre ellas */
+main article > section,
+main article > aside,
+main > aside {
+  background-color: var(--color-superficie);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Presentación del producto ===== */
+main article > section:first-child > p:first-child {
+  color: #777777;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+figure {
+  margin: 0;
+}
+
+main article > section:first-child > figure {
+  text-align: center;
+}
+
+figcaption {
+  color: #777777;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* Galería de miniaturas */
+main article > section:first-child > ul {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+main article > section:first-child > ul img {
+  border: 2px solid var(--color-borde);
+  padding: 2px;
+}
+
+/* ===== Módulo de compra ===== */
+del {
+  color: #999999;
+}
+
+main article > aside strong[aria-label="Precio de oferta"] {
+  font-size: 2.2rem;
+  color: var(--color-texto);
+}
+
+mark {
+  background-color: transparent;
+  color: var(--color-oferta);
+  font-weight: bold;
+  margin-left: 8px;
+}
+
+main article > aside li {
+  padding: 6px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+/* ===== Botones (Call To Action) ===== */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+main article > aside button {
+  display: block;
+  width: 100%;
+  background-color: var(--color-primario);
+  color: #ffffff;
+  padding: 14px 20px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s;
+}
+
+main article > aside button:hover {
+  background-color: var(--color-primario-oscuro);
+}
+
+/* El segundo botón (carrito) con estilo secundario */
+main article > aside button + button {
+  background-color: #e3edfb;
+  color: var(--color-primario);
+}
+
+main article > aside button + button:hover {
+  background-color: #d0e0f7;
+}
+
+/* ===== Ficha técnica ===== */
+details {
+  margin-top: 20px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+summary {
+  font-weight: bold;
+  color: var(--color-titulo);
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+caption {
+  text-align: left;
+  color: #777777;
+  font-size: 0.85rem;
+  padding-bottom: 8px;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+th {
+  width: 40%;
+  background-color: #fafafa;
+}
+
+/* ===== Opiniones ===== */
+section article {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  column-gap: 15px;
+  padding: 18px 0;
+  border-top: 1px solid #eeeeee;
+}
+
+section article img {
+  grid-row: 1 / 5;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+
+section article h3,
+section article p,
+section article time {
+  grid-column: 2;
+  margin: 0 0 4px;
+}
+
+time {
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+/* ===== Productos relacionados ===== */
+main > aside ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+main > aside article {
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+}
+
+main > aside article a {
+  color: var(--color-texto);
+}
+
+main > aside article strong {
+  font-size: 1.3rem;
+}
+
+/* ===== Pie de página ===== */
+footer {
+  background-color: #333333;
+  color: #eeeeee;
+  padding: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+footer h2 {
+  color: var(--color-amarillo);
+  font-size: 1.1rem;
+}
+
+footer p,
+footer a {
+  color: #dddddd;
+}
+
+footer address {
+  font-style: normal;
+  line-height: 1.8;
+}
+
+footer li {
+  padding: 3px 0;
+}
+
+footer > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  border-top: 1px solid #555555;
+  padding-top: 15px;
+  margin: 0;
+}
+
+/* ===== Responsive ===== */
+@media (min-width: 800px) {
+  main > article {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    column-gap: 25px;
+    align-items: start;
+  }
+
+  /* Presentación a la izquierda, compra a la derecha */
+  main article > aside {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  main article > section:nth-of-type(n + 2) {
+    grid-column: 1 / -1;
+  }
+}
